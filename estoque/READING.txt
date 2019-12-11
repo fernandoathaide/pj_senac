@@ -1,0 +1,11 @@
+:: COMANDOS INICIAIS PARA IMPLANTAÇÃO DO PROJETO ::
+
+	git clone https://github.com/ramonsantana1987/controle_materiais.git
+	composer install
+	php artisan key:generate
+	php artisan serve
+	
+:: Running All Outstanding Migrations ::
+
+	url - https://laravel.com/docs/4.2/migrations
+	php artisan migrate
