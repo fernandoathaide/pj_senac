@@ -183,6 +183,11 @@ return [
             'url'         => 'docente',
             'icon'        => 'fas fa-male',
         ],
+        [
+            'text'        => 'Material',
+            'url'         => 'material',
+            'icon'        => 'fas fa-cart-plus',
+        ],
     ],
 
     /*
