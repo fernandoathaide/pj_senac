@@ -58,7 +58,7 @@
                 <td>{{$material->tipo}}</td>
                 <td>{{$material->quantidade}}</td>
                 <td>{{$material->metrica}}</td>
-                <td>{{$material->dt_validade}}</td>
+                <td>{{\Carbon\Carbon::parse( $material->dt_validade)->format('d/m/Y')}}</td>
 
                 <td><a href="{{ route('material.edit',$material->id_material)}}" class="btn btn-primary  btn-block">Alterar</a></td>
                 <td>
@@ -68,7 +68,6 @@
                       <button class="btn btn-danger btn-block" type="submit">Excluir</button>
                     </form>
                 </td>
-
             </tr>
         @endforeach
     </tbody>
