@@ -4,11 +4,32 @@
 
 <style>
     .uper {
-      margin-top: 40px;
-    }
-    .table, table tr, table tr td, table th{
-        border: 5px solid #dee2e6 !important;
-    }
+          margin-top: 40px;
+        }
+        .table, table tr, table tr td, table th{
+            border: 5px solid #dee2e6 !important;
+        }
+        .btn-danger {
+            color: #fff;
+            background-color: #f29400;
+            border-color: #f29400;
+        }
+        .btn-danger:hover {
+            color: #fff;
+            background-color: #FF4500;
+            border-color: #FF4500;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #004687;
+            border-color: #004687;
+        }
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #000080;
+            border-color: #000080;
+        }
+
   </style>
   <div class="uper">
     @if(session()->get('success'))
@@ -48,7 +69,5 @@
       </tbody>
     </table>
   <div>
-
-
 @endsection
 

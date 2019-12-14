@@ -8,7 +8,7 @@
   </style>
   <div class="card uper">
     <div class="card-header">
-      Edit Share
+      Editar Material
     </div>
     <div class="card-body">
       @if ($errors->any())
@@ -20,17 +20,49 @@
           </ul>
         </div><br />
       @endif
-        <form method="post" action="{{ route('docente.update', $docente->id_docente) }}">
+        <form method="post" action="{{ route('material.update', $material->id_material) }}">
           @method('PATCH')
-          @csrf
+
           <div class="form-group">
-            <label for="nome">Nome:</label>
-            <input type="text" class="form-control" name="docente_nome" value={{ $docente->nome }} />
-          </div>
-          <div class="form-group">
-            <label for="matricula">Matricula:</label>
-            <input type="text" class="form-control" name="docente_matricula" value={{str_pad($docente->matricula,5,"0",STR_PAD_LEFT)}} />
-          </div>
+            @csrf
+            <label for="descricao">Descrição do material:</label>
+          <input type="text" class="form-control" name="material_descricao" value="{{ $material->descricao  }}"/>
+        </div>
+            <div class="row">
+                <div class="form-group">
+                    @csrf
+                    <label for="tipo">Tipo do Material</label>
+                    <select class="form-control" name="material_tipo">
+                        <option value="Liquido" @if($material->tipo == "Liquido") selected="selected" @endif>Liquido</option>
+                        <option value="Gasoso" @if($material->tipo == "Gasoso") selected="selected" @endif>Gasoso</option>
+                        <option value="Alimento" @if($material->tipo == "Alimento") selected="selected" @endif>Alimento</option>
+                    </select>
+                </div>
+
+                <div class="form-group input_row">
+                    @csrf
+                    <label for="quantidade">Quantidade:</label>
+                    <input type="text" class="form-control" name="material_quantidade" value="{{ $material->quantidade }}"/>
+                </div>
+
+                <div class="form-group input_row">
+                    @csrf
+                    <label for="metrica">Metrica do Material</label>
+                    <select class="form-control" name="material_metrica">
+                        <option value="L" @if($material->metrica == "L") selected="selected" @endif>L</option>
+                        <option value="ml" @if($material->metrica == "ml") selected="selected" @endif>ml</option>
+                        <option value="Kg" @if($material->metrica == "Kg") selected="selected" @endif>Kg</option>
+                    </select>
+                </div>
+                <div class="form-group input_row">
+                    @csrf
+                    <label>Data de Validade:</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                        <input type="date" class="form-control" im-insert="false" name="material_dt_validade" value="{{ $material->dt_validade }}"/>
+                    </div>
+                </div>
+            </div>
           <button type="submit" class="btn btn-primary">Alterar</button>
         </form>
     </div>
