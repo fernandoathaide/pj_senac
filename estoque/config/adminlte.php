@@ -173,11 +173,6 @@ return [
     */
 
     'menu' => [
-//        [
-//            'text' => 'search',
-//            'search' => true,
-//            'topnav' => true,
-//        ],
         [
             'text'        => 'Docentes',
             'url'         => 'docente',
@@ -187,6 +182,11 @@ return [
             'text'        => 'Material',
             'url'         => 'material',
             'icon'        => 'fas fa-cart-plus',
+        ],
+        [
+            'text'        => 'Cursos',
+            'url'         => 'curso',
+            'icon'        => 'fas fa-swatchbook',
         ],
     ],
 

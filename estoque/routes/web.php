@@ -20,9 +20,10 @@
 //Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 Route::resources([
-    '/home' => 'HomeController',
     '/' => 'HomeController',
+    '/home' => 'HomeController',
     'docente' => 'DocenteController',
-    'material' => 'MaterialController'
+    'material' => 'MaterialController',
+    'curso' => 'CursoController'
 ]);
 
