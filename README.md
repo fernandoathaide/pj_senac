@@ -7,7 +7,7 @@ Projeto controle de materiais dos cursos técnicos do SENAC/DF
 Estudos ::
 	https://laravel.com/
 	https://getcomposer.org/
-	https://www.youtube.com/watch?v=iC-k0G5TPlQ&feature=youtu.be
+	
 
 Videos ::
 
