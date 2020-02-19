@@ -24,6 +24,10 @@ Route::resources([
     '/home' => 'HomeController',
     'docente' => 'DocenteController',
     'material' => 'MaterialController',
-    'curso' => 'CursoController'
+    'curso' => 'CursoController',
+    'docentecurso' => 'TadocentecursoController',
+    'solicitaçãomaterial' => 'TasolicitacaomaterialController',
+    'componente' => 'TbcomponenteController',
+
 ]);
 

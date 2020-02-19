@@ -17,8 +17,7 @@ class CreateDocentesTable extends Migration
             $table->bigIncrements('id_docente');
             $table->string('nome',150);
             $table->integer('matricula')->unique();
-            $table->foreign('id_docente')->references('fk_id_docente')->on('tadocentecurso');
-            $table->foreign('id_docente')->references('fk_id_docente')->on('tbcomponente');
+            $table->foreign('id_docente')->references('fk_id_docente')->on('ta_docente_curso');
         });
     }
 

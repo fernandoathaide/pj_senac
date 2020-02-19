@@ -21,6 +21,8 @@ class CreateCursosTable extends Migration
             $table->date('dt_inicio');
             $table->date('dt_fim');
             $table->decimal('qt_horas_curso',10,2);
+            $table->foreign('id_curso')->references('fk_id_curso')->on('tadocentecurso');
+            $table->foreign('id_curso')->references('fk_id_curso')->on('tbcomponente');
         });
     }
 

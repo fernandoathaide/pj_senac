@@ -20,6 +20,7 @@ class CreateMaterialsTable extends Migration
             $table->integer('quantidade');
             $table->string('metrica',10);
             $table->date('dt_validade');
+            $table->foreign('id_material')->references('fk_id_material')->on('tasolicitacaomaterial');
         });
     }
 
