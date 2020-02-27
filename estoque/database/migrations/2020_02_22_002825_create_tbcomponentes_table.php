@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTadocentecursoTable extends Migration
+class CreateTbcomponentesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateTadocentecursoTable extends Migration
      */
     public function up()
     {
-        Schema::create('Tadocentecurso', function (Blueprint $table) {
-            $table->bigIncrements('fk_id_docente');
-            $table->bigIncrements('fk_id_curso');
-            $table->date('dt_inclusao');
-            $table->date('dt_exclusao');
-
+        Schema::create('tbcomponentes', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +26,6 @@ class CreateTadocentecursoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Tadocentecurso');
+        Schema::dropIfExists('tbcomponentes');
     }
 }

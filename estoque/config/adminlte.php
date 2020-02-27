@@ -188,21 +188,7 @@ return [
             'url'         => 'curso',
             'icon'        => 'fas fa-swatchbook',
         ],
-        [
-            'text'        => 'docentecurso',
-            'url'         => 'docentecurso',
-            'icon'        => 'fas fa-male',
-        ],
-        [
-            'text'        => 'solicitacaomaterial',
-            'url'         => 'solicitacaomaterial',
-            'icon'        => 'fas fa-male',
-        ],
-        [
-            'text'        => 'componente',
-            'url'         => 'componente',
-            'icon'        => 'fas fa-male',
-        ],
+
     ],
 
     /*

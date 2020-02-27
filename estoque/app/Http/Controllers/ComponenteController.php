@@ -1,0 +1,121 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Model\Componente;
+use Illuminate\Http\Request;
+
+class ComponenteController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $materiais = Componente::All();
+        return view('componente.index', compact('componentes'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('componente.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $request->validate([
+            'material_descricao'=>'required',
+            'material_tipo'=>'required',
+            'material_quantidade'=>'required',
+            'material_metrica'=>'required',
+            'material_dt_validade'=>'required',
+          ]);
+
+          $componente = new Componente([
+            'descricao' => $request->get('material_descricao'),
+            'tipo' => $request->get('material_tipo'),
+            'quantidade' => $request->get('material_quantidade'),
+            'metrica' => $request->get('material_metrica'),
+            'dt_validade' => $request->get('material_dt_validade'),
+          ]);
+          $componente->save();
+          return redirect('/material')->with('success', 'Material cadastrado!');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        $componente = Componente::find($id);
+        return view('material.edit', compact('material'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'material_descricao'=>'required',
+            'material_tipo'=>'required',
+            'material_quantidade'=>'required',
+            'material_metrica'=>'required',
+            'material_dt_validade'=>'required',
+          ]);
+          $componente = Componente::find($id);
+
+          $componente->descricao = $request->get('componente_descricao');
+          $componente->tipo = $request->get('componente_tipo');
+          $componente->quantidade = $request->get('componente_quantidade');
+          $componente->metrica = $request->get('componente_metrica');
+          $componente->dt_validade = $request->get('componente_dt_validade');
+
+          $componente->save();
+          return redirect('/componente')->with('success', 'Componente Alterado!');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $componente = Componente::find($id);
+        $componente->delete();
+        return redirect('/componente')->with('success', 'Componente excluido com sucesso!');
+    }
+}

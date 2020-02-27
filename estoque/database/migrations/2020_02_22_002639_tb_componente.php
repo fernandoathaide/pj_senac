@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class TaSolitacaoMaterial extends Migration
+class TbComponente extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class TaSolitacaoMaterial extends Migration
      */
     public function up()
     {
-        Schema::create('tasolitacaomaterial', function (Blueprint $table) {
+        Schema::create('tb_componente', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class TaSolitacaoMaterial extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasolitacaomaterial');
+        Schema::dropIfExists('tb_componente');
     }
 }
