@@ -189,7 +189,14 @@ return [
             'icon'        => 'fas fa-swatchbook',
         ],
 
+        [
+            'text'        => 'Componente',
+            'url'         => 'componente',
+            'icon'        => 'fas fa-swatchbook',
+        ],
+
     ],
+
 
     /*
     |--------------------------------------------------------------------------

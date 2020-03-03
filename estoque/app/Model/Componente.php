@@ -14,6 +14,7 @@ class Componente extends Model
 
         'id_componente',
         'fk_id_curso',
+        'fk_id_docente',
         'no_componente',
         'descricao',
         'qt_horas_componente',

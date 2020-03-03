@@ -14,7 +14,7 @@ class ComponenteController extends Controller
      */
     public function index()
     {
-        $materiais = Componente::All();
+        $componentes = Componente::All();
         return view('componente.index', compact('componentes'));
     }
 
@@ -37,22 +37,22 @@ class ComponenteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'material_descricao'=>'required',
-            'material_tipo'=>'required',
-            'material_quantidade'=>'required',
-            'material_metrica'=>'required',
-            'material_dt_validade'=>'required',
+            'componente_descricao'=>'required',
+            'componente_tipo'=>'required',
+            'componente_quantidade'=>'required',
+            'componente_metrica'=>'required',
+            'componente_dt_validade'=>'required',
           ]);
 
           $componente = new Componente([
-            'descricao' => $request->get('material_descricao'),
-            'tipo' => $request->get('material_tipo'),
-            'quantidade' => $request->get('material_quantidade'),
-            'metrica' => $request->get('material_metrica'),
-            'dt_validade' => $request->get('material_dt_validade'),
+            'descricao' => $request->get('componente_descricao'),
+            'tipo' => $request->get('componente_tipo'),
+            'quantidade' => $request->get('componente_quantidade'),
+            'metrica' => $request->get('componente_metrica'),
+            'dt_validade' => $request->get('componente_dt_validade'),
           ]);
           $componente->save();
-          return redirect('/material')->with('success', 'Material cadastrado!');
+          return redirect('/componente')->with('success', 'componente cadastrado!');
     }
 
     /**
@@ -75,7 +75,7 @@ class ComponenteController extends Controller
     public function edit($id)
     {
         $componente = Componente::find($id);
-        return view('material.edit', compact('material'));
+        return view('componente.edit', compact('componente'));
     }
 
     /**
@@ -88,11 +88,11 @@ class ComponenteController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'material_descricao'=>'required',
-            'material_tipo'=>'required',
-            'material_quantidade'=>'required',
-            'material_metrica'=>'required',
-            'material_dt_validade'=>'required',
+            'componente_descricao'=>'required',
+            'componente_tipo'=>'required',
+            'componente_quantidade'=>'required',
+            'componente_metrica'=>'required',
+            'componente_dt_validade'=>'required',
           ]);
           $componente = Componente::find($id);
 

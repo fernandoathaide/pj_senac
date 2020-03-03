@@ -25,9 +25,7 @@ Route::resources([
     'docente' => 'DocenteController',
     'material' => 'MaterialController',
     'curso' => 'CursoController',
-    'docentecurso' => 'TadocentecursoController',
-    'solicitaçãomaterial' => 'TasolicitacaomaterialController',
-    'componente' => 'TbcomponenteController',
+    'componente' => 'ComponenteController',
 
 ]);
 
