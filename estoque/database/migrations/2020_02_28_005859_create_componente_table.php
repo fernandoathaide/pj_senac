@@ -15,14 +15,12 @@ class CreateComponenteTable extends Migration
     {
         Schema::create('componente', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('no_curso', 150);
-            $table->string('descricao', 200);
-            $table->integer('qt_alunos');
-            $table->date('dt_inicio');
-            $table->date('dt_fim');
-            $table->decimal('qt_horas_curso',10,2);
-            $table->foreign('id_curso')->references('fk_id_curso')->on('tadocentecurso');
-            $table->foreign('id_curso')->references('fk_id_curso')->on('tbcomponente');
+            $table->string('no_componente', 45);
+            $table->string('descricao', 100);
+            $table->integer('qt_horas_componente');
+            $table->integer('qt_alunos_mat_componente');
+            $table->foreign('id_curso')->references('fk_id_curso')->on('tb_curso');
+            $table->foreign('id_docente')->references('fk_id_docente')->on('tb_docente');
             $table->timestamps();
         });
     }

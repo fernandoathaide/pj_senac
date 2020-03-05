@@ -28,43 +28,53 @@
       <form method="post" action="{{ route('componente.store') }}">
             <div class="form-group">
                 @csrf
-                <label for="descricao">Descrição do componente:</label>
-                <input type="text" class="form-control" name="componente_descricao"/>
+                <label for="no_componente"> numero de componente:</label>
+                <input type="text" class="form-control" name="componente_no_componente"/>
             </div>
                 <div class="row">
                     <div class="form-group">
                         @csrf
-                        <label for="tipo">Tipo do componente</label>
-                        <select class="form-control" name="componente_tipo">
-                            <option value="Liquido">Liquido</option>
-                            <option value="Gasoso">Gasoso</option>
-                            <option value="Alimento">Alimento</option>
+                        <label for="discricao">Qual curso do componente</label>
+                        <select class="form-control" name="componente_discricao">
+                            <option value="Informatica">informatica</option>
+                            <option value="Gastronomia">Gastronomia</option>
+                            <option value="Cabelereiro">cabelereiro</option>
+                            <option value="Segurança do trabalho">segurança do trabalho</option>
+                            <option value="Culinaria">Culinaria</option>
+                            <option value="Gestao de negocios">Gestao de negocios</option>
                         </select>
                     </div>
 
                     <div class="form-group input_row">
                         @csrf
-                        <label for="quantidade">Quantidade:</label>
-                        <input type="text" class="form-control" name="componente_quantidade"/>
+                        <label for="qt_horas_componente">Quantidade de horas do curso:</label>
+                        <input type="text" class="form-control" name="componente_qt_horas_componente"/>
                     </div>
+
+
 
                     <div class="form-group input_row">
                         @csrf
-                        <label for="metrica">Metrica do componente</label>
-                        <select class="form-control" name="componente_metrica">
-                            <option value="L">L</option>
-                            <option value="ml">ml</option>
-                            <option value="Kg">Kg</option>
-                        </select>
+                        <label for="carga_horaria">Carga Horária:</label>
+                        <input type="text" class="form-control" name="curso_carga_horaria"/>
                     </div>
+
+
+
+
                     <div class="form-group input_row">
                         @csrf
-                        <label>Data de Validade:</label>
-                        <div class="input-group-prepend">
-                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                            <input type="date" class="form-control" im-insert="false" name="componente_dt_validade" />
-                        </div>
+                        <label for="qt_alunos_mat_componente">Quantidade de alunos no curso:</label>
+                        <input type="text" class="form-control" name="componente_qt_alunos_mat_componente"/>
                     </div>
+
+
+                    <div class="form-group">
+                        @csrf
+                        <label for="Quatidade">Quantos alunos:</label>
+                        <input type="text" class="form-control" name="componente_qt_alunos_mat_componente"/>
+                    </div>
+
                 </div>
             <button type="submit" class="btn btn-primary">Cadastrar</button>
       </form>

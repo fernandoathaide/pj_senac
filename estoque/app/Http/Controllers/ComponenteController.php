@@ -37,19 +37,17 @@ class ComponenteController extends Controller
     public function store(Request $request)
     {
         $request->validate([
+            'componente_no_componente'=>'required',
             'componente_descricao'=>'required',
-            'componente_tipo'=>'required',
-            'componente_quantidade'=>'required',
-            'componente_metrica'=>'required',
-            'componente_dt_validade'=>'required',
+            'componente_qt_horas_componente'=>'required',
+            'componente_qt_alunos_mat_componente'=>'required',
           ]);
 
           $componente = new Componente([
+            'no_componente' => $request->get('componente_no_componente'),
             'descricao' => $request->get('componente_descricao'),
-            'tipo' => $request->get('componente_tipo'),
-            'quantidade' => $request->get('componente_quantidade'),
-            'metrica' => $request->get('componente_metrica'),
-            'dt_validade' => $request->get('componente_dt_validade'),
+            'qt_horas_componente' => $request->get('componente_qt_horas_componente'),
+            'qt_alunos_mat_componente' => $request->get('componente_qt_alunos_mat_componente'),
           ]);
           $componente->save();
           return redirect('/componente')->with('success', 'componente cadastrado!');
@@ -88,19 +86,18 @@ class ComponenteController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
+            'componente_no_componente'=>'required',
             'componente_descricao'=>'required',
-            'componente_tipo'=>'required',
-            'componente_quantidade'=>'required',
-            'componente_metrica'=>'required',
-            'componente_dt_validade'=>'required',
+            'componente_qt_horas_componente'=>'required',
+            'componente_qt_alunos_mat_componente'=>'required',
           ]);
           $componente = Componente::find($id);
 
+          $componente->no_componente = $request->get('componente_no_componente');
           $componente->descricao = $request->get('componente_descricao');
-          $componente->tipo = $request->get('componente_tipo');
-          $componente->quantidade = $request->get('componente_quantidade');
-          $componente->metrica = $request->get('componente_metrica');
-          $componente->dt_validade = $request->get('componente_dt_validade');
+          $componente->qt_horas_componente = $request->get('componente_qt_horas_componente');
+          $componente->qt_alunos_mat_componente = $request->get('componente_qt_alunos_mat_componente');
+
 
           $componente->save();
           return redirect('/componente')->with('success', 'Componente Alterado!');
